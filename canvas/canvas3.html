@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacman and 4 ghosts</title>
+</head>
+<body>
+
+     <h2>PACMAN AND 4 GHOSTS</h2>
+
+    <canvas id="mycanvas" width="1200" height="600"  style="border: 2px solid black; background-color: black;"></canvas>
+    <script>
+        let c= document.getElementById("mycanvas");
+        let ctx= c.getContext("2d");
+
+        ctx.beginPath();
+        ctx.arc(300, 300, 200, 0.2 * Math.PI, 1.8 * Math.PI); // x, y, radius, start angle, end angle
+        ctx.lineTo(300, 300);
+        ctx.closePath();
+        ctx.strokeStyle= "yellow";
+        ctx.stroke();
+        ctx.fillStyle= "yellow";
+        ctx.fill();
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.arc(300, 200, 30, 0, 2 * Math.PI); // x, y, radius, start angle, end angle
+        ctx.strokeStyle= "black";
+        ctx.stroke();
+        ctx.fillStyle= "black";
+        ctx.fill();
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.arc(310, 207, 13, 0, 2 * Math.PI); // x, y, radius, start angle, end angle
+        ctx.strokeStyle= "white";   
+        ctx.stroke();
+        ctx.fillStyle= "white";
+        ctx.fill();
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.arc(420, 300, 25, 0, 2 * Math   .PI); // x, y, radius, start angle, end angle
+        ctx.strokeStyle= "white";
+        ctx.stroke();
+        ctx.fillStyle= "white";
+        ctx.fill();
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.arc(520, 300, 25, 0, 2 * Math   .PI); // x, y, radius, start angle, end angle
+        ctx.strokeStyle= "white";
+        ctx.stroke();
+        ctx.fillStyle= "white";
+        ctx.fill();
+        ctx.closePath();
+
+        const ghostColors = ["red", "pink", "cyan", "orange"];
+const ghostPositions = [
+    { x: 650, y: 240 }, // top row, left
+    { x: 750, y: 240 }, // top row, right
+    { x: 650, y: 360 }, // bottom row, left
+    { x: 750, y: 360 }  // bottom row, right
+];
+
+for (let i = 0; i < 4; i++) {
+    let { x, y } = ghostPositions[i];
+
+    // Body (head + 3-tentacle legs)
+    ctx.beginPath();
+    ctx.arc(x, y, 35, Math.PI, 0, false); // head
+    ctx.lineTo(x + 35, y + 35);
+    // 3 tentacles
+    ctx.quadraticCurveTo(x + 23, y + 55, x + 12, y + 35);
+    ctx.quadraticCurveTo(x, y + 55, x - 12, y + 35);
+    ctx.quadraticCurveTo(x - 23, y + 55, x - 35, y + 35);
+    ctx.closePath();
+    ctx.fillStyle = ghostColors[i];
+    ctx.fill();
+    ctx.strokeStyle = "white";
+    ctx.stroke();
+
+    // Eyes (draw both in one path, no black line between)
+    ctx.beginPath();
+    ctx.arc(x - 12, y - 5, 9, 0, 2 * Math.PI); // left eye
+    ctx.arc(x + 12, y - 5, 9, 0, 2 * Math.PI); // right eye
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    // Pupils
+    ctx.beginPath();
+    ctx.arc(x - 12, y - 2, 4, 0, 2 * Math.PI); // left pupil
+    ctx.arc(x + 12, y - 2, 4, 0, 2 * Math.PI); // right pupil
+    ctx.fillStyle = "blue";
+    ctx.fill();
+    // No stroke for pupils
+}
+
+
+        
+
+        </script>
+    
+</body>
+</html>

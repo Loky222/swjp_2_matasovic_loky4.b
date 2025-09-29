@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+<body>
+    <h2>HTML CANVAS</h2>
+
+    <canvas id="mycanvas" width="600" height="600" style="border: 2px solid black"></canvas>
+    <script>
+        let c= document.getElementById("mycanvas");
+        let ctx= c.getContext("2d");
+
+        // Draw a rectangle
+        ctx.beginPath();
+        ctx.rect(20, 20, 150, 100);
+        ctx.strokeStyle= "blue";
+        ctx.stroke();
+        ctx.fillStyle= "red";
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.arc(300, 70, 50, 0, 2 * Math.PI); // x, y, radius, start angle, end angle
+        ctx.strokeStyle= "green";
+        ctx.stroke();
+        ctx.fillStyle= "yellow";
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.moveTo(400, 150);
+        ctx.lineTo(500, 250);
+        ctx.lineTo(300, 250);
+        ctx.lineTo(400, 150);
+        ctx.lineWidth= 10; // mora biti pre stroke
+        ctx.strokeStyle= "purple";
+        ctx.stroke();
+        ctx.fillStyle= "pink";
+        ctx.fill();
+        
+        ctx.closePath();
+    </script>
+    
+    
+</body>
+</html>
