@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG tablica</title>
+</head>
+<style>
+    table, td, th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        text-align: center;
+    }
+    table {
+        width: 50%;
+    }
+</style>
+<body>
+    <h2>SVG grafika</h2>
+    <br>
+    <h3>Tablica</h3>
+    <table>
+        <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Razred</th>
+        </tr>
+        <tr>
+            <td>Marko</td>
+            <td>Marković</td>
+            <td>1.a</td>
+        </tr>
+        <tr>
+            <td>Ivana</td>
+            <td>Ivić</td>
+            <td>2.b</td>
+        </tr>
+        <tr>
+            <td>Petar</td>
+            <td>Petrović</td>
+            <td>3.c</td>
+        </tr>
+    </table>
+
+    <br>
+    <h3>Forme u HTML-u</h3>
+    <form action="/submit" method="post">
+        <label for="fname">Ime:</label><br>
+        <input type="text" id="fname" name="fname" reqierd><br>
+        <label for="lname">Prezime:</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Pošalji">
+
+    
+
+    
+</body>
+</html>
