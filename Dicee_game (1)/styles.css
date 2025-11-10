@@ -29,7 +29,7 @@ p {
 }
 
 img {
-  width: 80%;
+  width: 50%;
 }
 
 footer {
@@ -38,4 +38,19 @@ footer {
   text-align: center;
   font-family: 'Indie Flower', cursive;
 
+}
+h2 {
+  color: aqua;
+  font-family: 'Indie Flower', cursive;
+}
+
+button{
+  background-color: red;
+  color: white;
+  padding: 2px;
+  margin-left: 900px;
+  width: 100px;
+  height: 40px;
+  text-decoration: double;
+  font-weight: 700;
 }
