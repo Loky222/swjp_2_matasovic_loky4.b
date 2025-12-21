@@ -6,29 +6,199 @@
     <title>Elektronički alati</title>
 </head>
 <body>
-    <h1>OHMOV ZAKON</h1>
-    <h2>Izračunavanje napona, struje i otpora</h2>
-    <form>
-        <label for="voltage">Napon (V): </label>
-        <input type="number" id="voltage" placeholder="Unesite napon"><br><br>
+   <h1>OHMOV ZAKON</h1>
 
-        <label for="resistance">Otpor (R): </label>
-        <input type="number" id="resistance" placeholder="Unesite otpor"><br><br>
+<div class="calc-box">
+    <div>
+        <label>Napon (V):</label><br>
+        <input type="number" id="voltage"><br>
+
+        <label>Otpor (Ω):</label><br>
+        <input type="number" id="resistance"><br>
+
+        <button onclick="Strujaracun()">Izračunaj struju</button>
+
+        <div id="rezultat" class="result">Rezultat:</div>
+    </div>
+
+    <img src="ohmov_zakon.png">
+</div>
 
 
-        <button type="button" onclick="Strujaracun()">Izračunaj Struju</button>
-    </form>
-    <h2 id="result">Rezultat: </h2>
-    
+    <h1>SERIJSKI SPOJ OTPORNIKA</h1>
 
-    
-</body>
+<div class="calc-box">
+    <div>
+        <label>R1 (Ω):</label><br>
+        <input type="number" id="r1"><br>
 
+        <label>R2 (Ω):</label><br>
+        <input type="number" id="r2"><br>
+
+        <button onclick="SerijskiOtpor()">Izračunaj</button>
+
+        <div id="rezSerijski" class="result">Ukupni otpor:</div>
+    </div>
+
+    <img src="serijski.png">
+</div>
+
+  <h1>PARALELNI SPOJ OTPORNIKA</h1>
+
+<div class="calc-box">
+    <div>
+        <label>R1 (Ω):</label><br>
+        <input type="number" id="pr1"><br>
+
+        <label>R2 (Ω):</label><br>
+        <input type="number" id="pr2"><br>
+
+        <button onclick="ParalelniOtpor()">Izračunaj</button>
+
+        <div id="rezParalelni" class="result">Ukupni otpor:</div>
+    </div>
+
+    <img src="paralelno.png">
+</div>
+
+
+
+   <h1>DIJELITELJ NAPONA</h1>
+
+<div class="calc-box">
+    <div>
+        <label>Ulazni napon U (V):</label><br>
+        <input type="number" id="uin"><br>
+
+        <label>R1 (Ω):</label><br>
+        <input type="number" id="dr1"><br>
+
+        <label>R2 (Ω):</label><br>
+        <input type="number" id="dr2"><br>
+
+        <button onclick="DjeliteljNapona()">Izračunaj U<sub>2</sub></button>
+
+        <div id="rezDjelitelj" class="result">Izlazni napon:</div>
+    </div>
+
+    <img src="dijelilo napona.png">
+</div>
+
+
+   <h1>INDUKTIVITET IDEALNE ZAVOJNICE</h1>
+
+<div class="calc-box">
+    <div>
+        <label>μ (H/m):</label><br>
+        <input type="number" id="mu"><br>
+
+        <label>N:</label><br>
+        <input type="number" id="n"><br>
+
+        <label>S (m²):</label><br>
+        <input type="number" id="s"><br>
+
+        <label>l (m):</label><br>
+        <input type="number" id="l"><br>
+
+        <button onclick="Induktivitet()">Izračunaj</button>
+
+        <div id="rezL" class="result">Induktivitet:</div>
+    </div>
+
+    <img src="induktivitet.png">
+</div>
+
+
+<hr>
+
+<h1>INDUKTIVNI OTPOR</h1>
+
+<div class="calc-box">
+    <div>
+        <label>f (Hz):</label><br>
+        <input type="number" id="fL"><br>
+
+        <label>L (H):</label><br>
+        <input type="number" id="indL"><br>
+
+        <button onclick="InduktivniOtpor()">Izračunaj</button>
+
+        <div id="rezXL" class="result">X<sub>L</sub>:</div>
+    </div>
+
+    <img src="induktivni_otpor.png">
+</div>
+
+
+<h1>KAPACITIVNI OTPOR</h1>
+
+<div class="calc-box">
+    <div>
+        <label>f (Hz):</label><br>
+        <input type="number" id="fC"><br>
+
+        <label>C (F):</label><br>
+        <input type="number" id="capC"><br>
+
+        <button onclick="KapacitivniOtpor()">Izračunaj</button>
+
+        <div id="rezXC" class="result">X<sub>C</sub>:</div>
+    </div>
+
+    <img src="kapacitativni_otpor.png">
+</div>
 
 <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f8;
+        margin: 20px;
+    }
 
+    h1 {
+        color: #003366;
+    }
 
+    .calc-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        border: 2px solid #003366;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 30px;
+    }
 
+    .calc-box input {
+        width: 200px;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+
+    .calc-box button {
+        padding: 8px 15px;
+        background-color: #003366;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .calc-box button:hover {
+        background-color: #0055aa;
+    }
+
+    .calc-box img {
+        width: 180px;
+    }
+
+    .result {
+        font-weight: bold;
+        margin-top: 10px;
+    }
 </style>
+
 <script src="elektronički_alati.js"></script>
 </html>
