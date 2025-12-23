@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elektronički alati</title>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <script src="elektronički_alati.js"></script>
 </head>
 <body>
-   <h1>OHMOV ZAKON</h1>
+     <h1>OHMOV ZAKON</h1>
 
 <div class="calc-box">
     <div>
@@ -16,16 +17,14 @@
         <label>Otpor (Ω):</label><br>
         <input type="number" id="resistance"><br>
 
-        <button onclick="Strujaracun()">Izračunaj struju</button>
+        <button onclick="Strujaracun()">Izračunaj </button>
 
-        <div id="rezultat" class="result">Rezultat:</div>
+        <div id="rezultat" class="result">Ukupna struja:</div>
     </div>
 
     <img src="ohmov_zakon.png">
 </div>
-
-
-    <h1>SERIJSKI SPOJ OTPORNIKA</h1>
+<h1>SERIJSKI SPOJ OTPORNIKA</h1>
 
 <div class="calc-box">
     <div>
@@ -42,8 +41,7 @@
 
     <img src="serijski.png">
 </div>
-
-  <h1>PARALELNI SPOJ OTPORNIKA</h1>
+<h1>PARALELNI SPOJ OTPORNIKA</h1>
 
 <div class="calc-box">
     <div>
@@ -60,37 +58,11 @@
 
     <img src="paralelno.png">
 </div>
-
-
-
-   <h1>DIJELITELJ NAPONA</h1>
+<h1>INDUKTIVITET IDEALNE ZAVOJNICE</h1>
 
 <div class="calc-box">
     <div>
-        <label>Ulazni napon U (V):</label><br>
-        <input type="number" id="uin"><br>
-
-        <label>R1 (Ω):</label><br>
-        <input type="number" id="dr1"><br>
-
-        <label>R2 (Ω):</label><br>
-        <input type="number" id="dr2"><br>
-
-        <button onclick="DjeliteljNapona()">Izračunaj U<sub>2</sub></button>
-
-        <div id="rezDjelitelj" class="result">Izlazni napon:</div>
-    </div>
-
-    <img src="dijelilo napona.png">
-</div>
-
-
-   <h1>INDUKTIVITET IDEALNE ZAVOJNICE</h1>
-
-<div class="calc-box">
-    <div>
-        <label>μ (H/m):</label><br>
-        <input type="number" id="mu"><br>
+       
 
         <label>N:</label><br>
         <input type="number" id="n"><br>
@@ -108,10 +80,6 @@
 
     <img src="induktivitet.png">
 </div>
-
-
-<hr>
-
 <h1>INDUKTIVNI OTPOR</h1>
 
 <div class="calc-box">
@@ -124,13 +92,11 @@
 
         <button onclick="InduktivniOtpor()">Izračunaj</button>
 
-        <div id="rezXL" class="result">X<sub>L</sub>:</div>
+        <div id="rezXL" class="result">Induktivni otpor:</div>
     </div>
 
     <img src="induktivni_otpor.png">
 </div>
-
-
 <h1>KAPACITIVNI OTPOR</h1>
 
 <div class="calc-box">
@@ -143,11 +109,105 @@
 
         <button onclick="KapacitivniOtpor()">Izračunaj</button>
 
-        <div id="rezXC" class="result">X<sub>C</sub>:</div>
+        <div id="rezXC" class="result">Kapacitativni otpor:</div>
     </div>
 
     <img src="kapacitativni_otpor.png">
 </div>
+<h1>DIJELITELJ NAPONA</h1>
+
+<div class="calc-box">
+    <div>
+        <label>Ulazni napon U (V):</label><br>
+        <input type="number" id="uin"><br>
+
+        <label>R1 (Ω):</label><br>
+        <input type="number" id="dr1"><br>
+
+        <label>R2 (Ω):</label><br>
+        <input type="number" id="dr2"><br>
+
+        <button onclick="DjeliteljNapona()">Izračunaj </button>
+
+        <div id="rezDjelitelj" class="result">Izlazni napon:</div>
+    </div>
+
+    <img src="dijelilo napona.png">
+</div>
+
+<h1>SERIJSKI SPOJ ZAVOJNICA</h1>
+
+<div class="calc-box">
+    <div>
+        <label>L1 (H):</label><br>
+        <input type="number" id="sl1"><br>
+
+        <label>L2 (H):</label><br>
+        <input type="number" id="sl2"><br>
+
+        <button onclick="SerijskiZavojnice()">Izračunaj</button>
+
+        <div id="rezSerZav" class="result">Ukupni induktivitet:</div>
+    </div>
+    <img src="serijski_zavoj.png">
+</div>
+
+<h1>PARALELNI SPOJ ZAVOJNICA</h1>
+
+<div class="calc-box">
+    <div>
+        <label>L1 (H):</label><br>
+        <input type="number" id="pl1"><br>
+
+        <label>L2 (H):</label><br>
+        <input type="number" id="pl2"><br>
+
+        <button onclick="ParalelniZavojnice()">Izračunaj</button>
+
+        <div id="rezParZav" class="result">Ukupni induktivitet:</div>
+    </div>
+    <img src="paralelno_zavoj.png">
+</div>
+
+<h1>SERIJSKI SPOJ KONDENZATORA</h1>
+
+<div class="calc-box">
+    <div>
+        <label>C1 (F):</label><br>
+        <input type="number" id="sc1"><br>
+
+        <label>C2 (F):</label><br>
+        <input type="number" id="sc2"><br>
+
+        <button onclick="SerijskiKondenzatori()">Izračunaj</button>
+
+        <div id="rezSerKon" class="result">Ukupni kapacitet:</div>
+    </div>
+    <img src="serijski_kond.png">
+</div>
+
+<h1>PARALELNI SPOJ KONDENZATORA</h1>
+
+<div class="calc-box">
+    <div>
+        <label>C1 (F):</label><br>
+        <input type="number" id="pc1"><br>
+
+        <label>C2 (F):</label><br>
+        <input type="number" id="pc2"><br>
+
+        <button onclick="ParalelniKondenzatori()">Izračunaj</button>
+
+        <div id="rezParKon" class="result">Ukupni kapacitet:</div>
+    </div>
+    <img src="paralelno_kond.png">
+</div>
+
+
+     
+</body>
+</html>
+
 
 <style>
     body {
@@ -200,5 +260,4 @@
     }
 </style>
 
-<script src="elektronički_alati.js"></script>
 </html>

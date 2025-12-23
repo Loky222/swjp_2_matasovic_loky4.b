@@ -1,4 +1,3 @@
-
 function Strujaracun() {
     const napon = parseFloat(document.getElementById('voltage').value);
     const otpor = parseFloat(document.getElementById('resistance').value);
@@ -58,11 +57,9 @@ function DjeliteljNapona() {
     document.getElementById('rezDjelitelj').textContent =
         `Izlazni napon U₂: ${u2.toFixed(2)} V`;
 }
-
-
 // Induktivitet idealne zavojnice
 function Induktivitet() {
-    const mu = parseFloat(document.getElementById('mu').value);
+   
     const N = parseFloat(document.getElementById('n').value);
     const S = parseFloat(document.getElementById('s').value);
     const l = parseFloat(document.getElementById('l').value);
@@ -72,7 +69,7 @@ function Induktivitet() {
         return;
     }
 
-    const L = mu * (N * N * S) / l;
+    const L =  4* Math.PI* Math.pow(10, -7) * (N * N * S) / l;
     document.getElementById('rezL').textContent =
         `Induktivitet: ${L.toExponential(3)} H`;
 }
@@ -107,5 +104,63 @@ function KapacitivniOtpor() {
         `Kapacitivni otpor Xᴄ: ${XC.toFixed(2)} Ω`;
 }
 
+// SERIJSKI SPOJ ZAVOJNICA
+function SerijskiZavojnice() {
+    const L1 = parseFloat(document.getElementById('sl1').value);
+    const L2 = parseFloat(document.getElementById('sl2').value);
 
+    if (isNaN(L1) || isNaN(L2)) {
+        alert('Unesite ispravne vrijednosti!');
+        return;
+    }
+
+    const L = L1 + L2;
+    document.getElementById('rezSerZav').textContent =
+        `Ukupni induktivitet: ${L.toFixed(4)} H`;
+}
+
+// PARALELNI SPOJ ZAVOJNICA
+function ParalelniZavojnice() {
+    const L1 = parseFloat(document.getElementById('pl1').value);
+    const L2 = parseFloat(document.getElementById('pl2').value);
+
+    if (isNaN(L1) || isNaN(L2) || L1 === 0 || L2 === 0) {
+        alert('Unesite ispravne vrijednosti!');
+        return;
+    }
+
+    const L = 1 / (1 / L1 + 1 / L2);
+    document.getElementById('rezParZav').textContent =
+        `Ukupni induktivitet: ${L.toFixed(4)} H`;
+}
+
+// SERIJSKI SPOJ KONDENZATORA
+function SerijskiKondenzatori() {
+    const C1 = parseFloat(document.getElementById('sc1').value);
+    const C2 = parseFloat(document.getElementById('sc2').value);
+
+    if (isNaN(C1) || isNaN(C2) || C1 === 0 || C2 === 0) {
+        alert('Unesite ispravne vrijednosti!');
+        return;
+    }
+
+    const C = 1 / (1 / C1 + 1 / C2);
+    document.getElementById('rezSerKon').textContent =
+        `Ukupni kapacitet: ${C.toExponential(3)} F`;
+}
+
+// PARALELNI SPOJ KONDENZATORA
+function ParalelniKondenzatori() {
+    const C1 = parseFloat(document.getElementById('pc1').value);
+    const C2 = parseFloat(document.getElementById('pc2').value);
+
+    if (isNaN(C1) || isNaN(C2)) {
+        alert('Unesite ispravne vrijednosti!');
+        return;
+    }
+
+    const C = C1 + C2;
+    document.getElementById('rezParKon').textContent =
+        `Ukupni kapacitet: ${C.toExponential(3)} F`;
+}
     
