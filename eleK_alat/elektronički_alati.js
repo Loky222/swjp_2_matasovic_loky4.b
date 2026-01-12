@@ -64,12 +64,13 @@ function Induktivitet() {
     const S = parseFloat(document.getElementById('s').value);
     const l = parseFloat(document.getElementById('l').value);
 
-    if (isNaN(mu) || isNaN(N) || isNaN(S) || isNaN(l) || l === 0) {
+    if ( isNaN(N) || isNaN(S) || isNaN(l) || l === 0) {
         alert('Unesite ispravne vrijednosti!');
         return;
     }
 
-    const L =  4* Math.PI* Math.pow(10, -7) * (N * N * S) / l;
+   const L = 4 * Math.PI * Math.pow(10, -7) * (N * N * S) / l;
+
     document.getElementById('rezL').textContent =
         `Induktivitet: ${L.toExponential(3)} H`;
 }
