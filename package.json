@@ -1,0 +1,24 @@
+{
+  "name": "swjp_2_matasovic_loky4.b",
+  "version": "1.0.0",
+  "description": "",
+  "main": "kalkulator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Loky222/swjp_2_matasovic_loky4.b.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Loky222/swjp_2_matasovic_loky4.b/issues"
+  },
+  "homepage": "https://github.com/Loky222/swjp_2_matasovic_loky4.b#readme",
+  "dependencies": {
+    "inquirer": "^13.3.0"
+  }
+}
