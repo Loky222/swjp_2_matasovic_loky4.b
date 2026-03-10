@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/Loky222/swjp_2_matasovic_loky4.b#readme",
   "dependencies": {
+    "body-parser": "^2.2.2",
+    "express": "^5.2.1",
     "inquirer": "^13.3.0"
   }
 }
