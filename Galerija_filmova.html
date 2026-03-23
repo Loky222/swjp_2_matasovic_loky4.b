@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Galerija filmova</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <button onclick="prikaziKategoriju('filmovi')">Filmovi</button>
+    <button onclick="prikaziKategoriju('serije')">Serije</button>
+    <button onclick="prikaziKategoriju('dokumentarci')">Dokumentarci</button>
+</nav>
+
+<h1 id="naslov">Filmovi</h1>
+
+<div id="galerija"></div>
+
+<!-- Popup -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span onclick="zatvoriPopup()" class="close">&times;</span>
+        <h2 id="ime"></h2>
+        <p><strong>Uloge:</strong> <span id="uloge"></span></p>
+        <p id="opis"></p>
+    </div>
+</div>
+
+<script src="Galerija_filmova.js"></script>
+</body>
+
+<style>
+    body {
+    font-family: Arial;
+    margin: 0;
+    background-color: #111;
+    color: white;
+    text-align: center;
+}
+
+nav {
+    background-color: #222;
+    padding: 15px;
+}
+
+nav button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    background: crimson;
+    color: white;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background: darkred;
+}
+
+#galerija {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+.film {
+    cursor: pointer;
+}
+
+.film img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.film img:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    top: 0;
+    left: 0;
+}
+
+.popup-content {
+    background: #222;
+    padding: 20px;
+    margin: 100px auto;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.close {
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+}
+</style>
+</html>
+
