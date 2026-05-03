@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "eleK_alat", "eleK_alat", "{803CF754-2879-4BD4-1CED-6BF90F6E7082}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Turistička agencija", "Turistička agencija", "{8410C685-6AAB-0500-A398-5E8C302C9E65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuristickaAgencija.Api", "eleK_alat\Turistička agencija\TuristickaAgencija.Api.csproj", "{FC2FF9CB-9847-B28A-9236-4DA2C66E564D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC2FF9CB-9847-B28A-9236-4DA2C66E564D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC2FF9CB-9847-B28A-9236-4DA2C66E564D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC2FF9CB-9847-B28A-9236-4DA2C66E564D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC2FF9CB-9847-B28A-9236-4DA2C66E564D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8410C685-6AAB-0500-A398-5E8C302C9E65} = {803CF754-2879-4BD4-1CED-6BF90F6E7082}
+		{FC2FF9CB-9847-B28A-9236-4DA2C66E564D} = {8410C685-6AAB-0500-A398-5E8C302C9E65}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8378053B-7492-4A80-87B0-2A4D4213E260}
+	EndGlobalSection
+EndGlobal
